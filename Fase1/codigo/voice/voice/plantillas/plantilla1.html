@@ -1,0 +1,31 @@
+<html>
+    <body>
+
+        {% include "superior/barra.html" %}
+
+        <h1>Bienvenido a plantilla 1</h1>
+        {# Comentario corto#}
+        {% comment %}
+            Esto es un comentario largo
+        {% endcomment %}
+        {% if nombre_persona == "Juan" %}
+            <h3>El curso lo imparte el titular</h3>
+            {% else %}
+            <h3>El curso lo imparte el sustituto</h3>
+        {% endif %}
+        <p>Hola {{nombre_persona.upper}} {{apellido_persona}}</p>
+        <h5>Estamos viendo las plantillas: {{ahora}}</h5>
+        <h3>Las habilidades de este usuario son: {{habilidades.0}}, {{habilidades.1}}, {{habilidades.2}}</h3>
+        <p>
+            <ul>
+                {% if habilidades %}
+                    {% for i in habilidades %}
+                        <li>{{i}}</li>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay elementos que mostrar</p>
+                {% endif %}
+            </ul>
+        </p>
+    </body>
+</html>
