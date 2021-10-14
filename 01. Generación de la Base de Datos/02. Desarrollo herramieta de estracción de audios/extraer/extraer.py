@@ -3,13 +3,13 @@ from pydub import AudioSegment
 from pydub.silence import split_on_silence
 from os import path
 
-video = mp.VideoFileClip(r"../32.mp4")
-video.audio.write_audiofile(r"resultado.wav")
+video = mp.VideoFileClip(r"C:/Users/domer/OneDrive/UPS/ERASMUS/EduTech/01. Generación de la Base de Datos/02. Desarrollo herramieta de estracción de audios/extraer/video.mp4")
+video.audio.write_audiofile(r"C:/Users/domer/OneDrive/UPS/ERASMUS/EduTech/01. Generación de la Base de Datos/02. Desarrollo herramieta de estracción de audios/extraer/resultado.wav")
 
 #sound = AudioSegment.from_mp3(src)
 #sound.export(dst, format="wav")
 
-audio = AudioSegment.from_wav("resultado.wav")
+audio = AudioSegment.from_wav("C:/Users/domer/OneDrive/UPS/ERASMUS/EduTech/01. Generación de la Base de Datos/02. Desarrollo herramieta de estracción de audios/extraer/resultado.wav")
 
 def match_target_amplitude(aChunk, target_dBFS):
     ''' Normalize given audio chunk '''
@@ -17,13 +17,13 @@ def match_target_amplitude(aChunk, target_dBFS):
     return aChunk.apply_gain(change_in_dBFS)
 
 # Load your audio.
-song = AudioSegment.from_mp3("../resultado.mp3")
+#song = AudioSegment.from_mp3("../resultado.mp3")
 
 # Split track where the silence is 2 seconds or more and get chunks using 
 # the imported function.
 chunks = split_on_silence (
     # Use the loaded audio.
-    song, 
+    audio, 
     # Specify that a silent chunk must be at least 2 seconds or 2000 ms long.
     min_silence_len = 1000,
     # Consider a chunk silent if it's quieter than -16 dBFS.
