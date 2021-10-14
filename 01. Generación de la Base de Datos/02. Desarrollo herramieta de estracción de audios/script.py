@@ -21,14 +21,12 @@ else:
     uncanal = sonido
 
 inicia = 0
-termina = 60
+termina = 59
 
 a = int(inicia*muestreo)
 b = int(termina*muestreo)
 amplitud = uncanal[a:b]
 #amplitud = abs(amplitud)
-
-waves.write(path+'salida.wav', muestreo, amplitud)
 
 y = 50
 t_min = 10
