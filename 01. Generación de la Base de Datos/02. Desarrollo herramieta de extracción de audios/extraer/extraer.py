@@ -1,8 +1,17 @@
+import argparse as agp
 import moviepy.editor as mp
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
 from os import path
 
+
+parser = agp.ArgumentParser()
+parser.add_argument("--path", "-p", help="set path")
+args = parser.parse_args()
+
+if args.path:
+    print(args.path)
+"""
 video = mp.VideoFileClip(r"C:/Users/domer/OneDrive/UPS/ERASMUS/EduTech/01. Generación de la Base de Datos/02. Desarrollo herramieta de estracción de audios/extraer/video.mp4")
 video.audio.write_audiofile(r"C:/Users/domer/OneDrive/UPS/ERASMUS/EduTech/01. Generación de la Base de Datos/02. Desarrollo herramieta de estracción de audios/extraer/resultado.wav")
 
@@ -50,3 +59,4 @@ for i, chunk in enumerate(chunks):
         bitrate = "192k",
         format = "mp3"
     )
+"""
